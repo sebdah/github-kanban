@@ -1,10 +1,10 @@
 Meteor.startup(function () {
 
-  Meteor.call('listIssues', function (error, issues) {
-    issues.forEach(function (issue) {
-      console.dir(issue);
-    })
-  });
-
 });
+
+
+Template.welcome.issues = function () {
+  var issues = Meteor.call('listIssues', function (error, issues) { return issues; });
+  console.log(issues);
+}
 
