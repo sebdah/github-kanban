@@ -9,4 +9,5 @@ preserve-inputs
 accounts-ui
 accounts-github
 standard-app-packages
-github
+github-interface
+http
