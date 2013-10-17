@@ -6,19 +6,33 @@
   {{loginButtons align="right"}}<br>
   <h1>GitHub Kanban</h1>
   {{> welcome }}
+  {{> repository}}
+  {{> issues}}
 </body>
 
 <template name="welcome">
   <p>
     Welcome to the GitHub Kanban app! Please log in to show your username.
   </p>
-  <h3>Issues</h3>
-  {{#each issues}}
-    <p>
-      <strong>#{{number}} {{title}}</strong><br />
-      Status: {{state}}, {{comments}} comment(s)<br />
-      Labels: {{#each labels}}{{name}} {{/each}}<br />
-      Reporter: {{user.login}}
-    </p>
-  {{/each}}
+</template>
+
+<template name="repository">
+  <strong>Repository:</strong><input type='text' id='repo'><br />
+  Current repo: {{currentRepo}}
+</template>
+
+<template name="issues">
+  {{#if issues}}
+    <h3>Issues</h3>
+    {{#each issues}}
+      <p>
+        <strong>#{{number}} {{title}}</strong><br />
+        Status: {{state}}, {{comments}} comment(s)<br />
+        Labels: {{#each labels}}{{name}} {{/each}}<br />
+        Reporter: {{user.login}}
+      </p>
+    {{/each}}
+  {{else}}
+    <p>No issues</p>
+  {{/if}}
 </template>
