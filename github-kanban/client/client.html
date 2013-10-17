@@ -14,6 +14,11 @@
   </p>
   <h3>Issues</h3>
   {{#each issues}}
-    {{title}}<br />
+    <p>
+      <strong>#{{number}} {{title}}</strong><br />
+      Status: {{state}}, {{comments}} comment(s)<br />
+      Labels: {{#each labels}}{{name}} {{/each}}<br />
+      Reporter: {{user.login}}
+    </p>
   {{/each}}
 </template>
