@@ -10,7 +10,7 @@
   {{loginButtons align="right"}}<br>
   {{#if user}}
     {{> repository}}
-    {{> issues}}
+    {{> board}}
   {{else}}
     {{> welcome }}
   {{/if}}
@@ -24,7 +24,9 @@
 </template>
 
 <template name="repository">
-  <span class="user">{{user.profile.github.username}} /</span><input type='text' id='repo'>
+  <p>
+    <span class="user">{{user.profile.github.username}} /</span><input type='text' id='repo'>
+  </p>
 </template>
 
 <template name="issues">
@@ -42,6 +44,49 @@
     {{else}}
       <p>No issues</p>
     {{/if}}
+  {{else}}
+    <p>{{listIssuesError}}</p>
+  {{/unless}}
+</template>
+
+<template name="board">
+  {{#unless listIssuesError}}
+  <div id="boardContainer">
+    <div id="boardIcebox" class="boardSlot">
+      <h3>Icebox</h3>
+      <div id="issues">
+        {{#each issues}}
+          <div id="issue">
+            <div id="title">#{{number}} {{title}}</div>
+            <div id="description">{{body}}</div>
+            <div id="bottom">
+              <div id="labels">{{#each labels}}{{name}} {{/each}}</div><br />
+              <div id="reporter">{{user.login}}</div>
+              <div id="comments">{{comments}} comment(s)</div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    <div id="boardBacklog" class="boardSlot">
+      <h3>Backlog</h3>
+      <div id="issues">
+
+      </div>
+    </div>
+    <div id="boardInProgress" class="boardSlot">
+      <h3>In progress</h3>
+      <div id="issues">
+
+      </div>
+    </div>
+    <div id="boardDone" class="boardSlot">
+      <h3>Done</h3>
+      <div id="issues">
+
+      </div>
+    </div>
+  </div>
   {{else}}
     <p>{{listIssuesError}}</p>
   {{/unless}}

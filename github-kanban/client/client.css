@@ -25,6 +25,60 @@ span.user {
     font-weight: bold;
 }
 
+div#boardContainer {
+    width: 100%;
+    height: 100%;
+}
+
+div.boardSlot {
+    background: #181818;
+    width: 22%;
+    height: 100%;
+    min-height: 200px;
+    float: left;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+div.boardSlot h3 {
+    text-align: center;
+}
+
+div#issue {
+    position: relative;
+    color: #000000;
+    background-color: #FAFC7E;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    width: 100%;
+    height: 150px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+div #issue #title {
+    font-weight: bold;
+}
+
+div #issue #description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+div #issue #bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+div #issue #bottom #comments { float: right; }
+div #issue #bottom #labels, #reporter { float: left; }
+
 .login-buttons-dropdown-align-right {
     float: right;
 }

@@ -105,8 +105,8 @@ Template.repository.events = {
 /**
 * Template issues
 */
-Template.issues.issues = function () { return Session.get('issues'); }
-Template.issues.listIssuesError = function () { return Session.get('listIssuesError'); }
+Template.board.issues = function () { return Session.get('issues'); }
+Template.board.listIssuesError = function () { return Session.get('listIssuesError'); }
 
 /**
 * Dependencies
