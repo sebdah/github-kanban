@@ -3,6 +3,28 @@ html {
     font-family: Verdana, sans-serif;
 }
 
+body {
+    background: #222222;
+    color: #F0F0E9;
+}
+
+input#repo {
+    background: #222222;
+    color: #FAFC7E;
+    border: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 200px;
+}
+
+span.user {
+    background: #222222;
+    color: #FAFC7E;
+    border: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .login-buttons-dropdown-align-right {
     float: right;
 }

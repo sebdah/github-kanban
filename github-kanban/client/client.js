@@ -43,7 +43,8 @@ function repoExists (user, repo, callback) {
 
 // Change user and repository
 function changeUserAndRepo () {
-  var githubUser = document.getElementById('user').value;
+  if (!Meteor.user()) return;
+  var githubUser = Meteor.user().profile.github.username;
   var githubRepo = document.getElementById('repo').value;
 
   repoExists(githubUser, githubRepo, function (error, exists) {
@@ -89,21 +90,15 @@ Template.main.user = function () { return Meteor.user(); }
 /**
 * Template repository
 */
-Template.repository.currentRepo = function () { return Session.get('githubRepo'); }
-
+Template.repository.user = function () { return Meteor.user(); }
 Template.repository.rendered = function () {
   document.getElementById('repo').value = Session.get('githubRepo');
-  document.getElementById('user').value = Session.get('githubUser');
 }
 
 Template.repository.events = {
   'keydown input#repo' : function (event) {
     if (event.which == 13)
       changeUserAndRepo();
-  },
-  'keydown input#user' : function (event) {
-    if (event.which == 13)
-      eventchangeUserAndRepo();
   }
 }
 
