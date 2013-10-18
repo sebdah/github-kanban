@@ -3,6 +3,9 @@ Meteor.startup(function () {
   Meteor.methods({
     listIssues: function (user, repo, accessToken) {
       return GitHubInterface.listIssues(user, repo, accessToken);
+    },
+    listUserRepos: function (user, accessToken) {
+      return GitHubInterface.listUserRepos(user, accessToken);
     }
   });
 
