@@ -11,3 +11,5 @@ accounts-github
 standard-app-packages
 github-interface
 http
+jquery
+jquery-ui

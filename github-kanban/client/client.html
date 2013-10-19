@@ -54,7 +54,7 @@
   <div id="boardContainer">
     <div id="boardIcebox" class="boardSlot">
       <h3>Icebox</h3>
-      <div id="issues">
+      <div id="issues" class='issues'>
         {{#each issues}}
           <div id="issue">
             <div id="title">#{{number}} {{title}}</div>
@@ -70,21 +70,15 @@
     </div>
     <div id="boardBacklog" class="boardSlot">
       <h3>Backlog</h3>
-      <div id="issues">
-
-      </div>
+      <div id="issues" class='issues'></div>
     </div>
     <div id="boardInProgress" class="boardSlot">
       <h3>In progress</h3>
-      <div id="issues">
-
-      </div>
+      <div id="issues" class='issues'></div>
     </div>
     <div id="boardDone" class="boardSlot">
       <h3>Done</h3>
-      <div id="issues">
-
-      </div>
+      <div id="issues" class='issues'></div>
     </div>
   </div>
   {{else}}

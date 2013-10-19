@@ -116,3 +116,15 @@ Deps.autorun(function(comp) {
     Session.set('githubUser', Meteor.user().profile.github.username);
   }
 });
+
+
+/**
+* jQuery hacks
+*/
+$(function() {
+  $('.issues').sortable({
+    connectWith: '.issues',
+    placeholder: 'ui-state-highlight'
+  });
+  $('.issues').disableSelection();
+});
