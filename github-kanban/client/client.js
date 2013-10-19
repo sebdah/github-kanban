@@ -119,12 +119,13 @@ Deps.autorun(function(comp) {
 
 
 /**
-* jQuery hacks
+* jQuery-ui hacks
 */
 $(function() {
   $('.issues').sortable({
     connectWith: '.issues',
-    placeholder: 'ui-state-highlight'
+    distance: 20,
+    placeholder: 'ui-sortable-placeholder'
   });
   $('.issues').disableSelection();
 });

@@ -88,8 +88,8 @@ div #issue #bottom #labels, #reporter { float: left; }
     float: right;
 }
 
-.ui-state-highlight {
-    background-color: #000000;
+.ui-sortable-placeholder {
+    background-color: #222222;
     padding-left: 1px;
     padding-right: 1px;
     padding-bottom: 1px;
@@ -97,5 +97,5 @@ div #issue #bottom #labels, #reporter { float: left; }
     height: 150px;
     font-size: 0.8em;
     margin-bottom: 5px;
-    border: 1px #FAFC7E solid;
+    border: 0px #FAFC7E solid;
 }
